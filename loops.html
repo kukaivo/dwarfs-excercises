@@ -1,0 +1,120 @@
+<html>
+
+<head>
+    <title>loops</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/myStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+
+</head>
+
+<body>
+
+
+    <div class="container-fluid">
+
+        <h1> For, While and Do-While Loops</h1>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm">
+                    Enter the initial value of Loop: ------>
+                    <input type="number" id="input1">
+                </div>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm">
+                        Enter the end value of the Loop: ------>
+                        <input type="number" id="input2">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm">
+                        Enter the counter value of Loop: ------>
+                        <input type="number" id="input3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-sm">
+                    <h3> For loop</h3>
+                    <button style="color:#00adb5;" class="nav-item nav-link" onclick="doLoop(this, input1.value, input2.value, input3.value)" value="for">For Loop</button>
+                </div>
+                <div class="col-sm">
+                    <h3> Do While loop</h3>
+                    <button style="color:#00adb5;" class="nav-item nav-link" onclick="doLoop(this, input1.value, input2.value, input3.value)" value="dowhile">Do While Loop</button>
+                </div>
+                <div class="col order-1">
+                    <h3> While loop</h3><button style="color:#00adb5;" class="nav-item nav-link" onclick="doLoop(this, input1.value, input2.value, input3.value)" value="while">While Loop</button>
+                </div>
+            </div>
+            <hr>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                    </div>
+                    <div class="col-sm">
+                        <h3 id="result"> Result</h3>
+                        <div id="loops"></div>
+                    </div>
+                    <div class="col-sm">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function doLoop(content, i, j, counter) {
+            i = parseInt(i);
+            j = parseInt(j);
+            counter = parseInt(counter);
+                        console.log(i + "-->" + j+ "-->" + counter);
+                var type = content.value;
+            if (j > i) {
+                switch (type) {
+                    case "for":
+                        document.getElementById("loops").innerHTML = "";
+                        document.getElementById("result").innerHTML = "For Loop Result";
+                        for (; i <= j; i+=counter) {
+                            document.getElementById("loops").innerHTML += i + "<br>";
+                        }
+                        break;
+                    case "dowhile":
+                        document.getElementById("loops").innerHTML = "";
+                        document.getElementById("result").innerHTML = "Do While Loop Result";
+                        do {
+                            document.getElementById("loops").innerHTML += i + "<br>";
+                            i+=counter;
+                        } while (i <= j);
+                        break;
+                    case "while":
+                        document.getElementById("loops").innerHTML = "";
+                        document.getElementById("result").innerHTML = "While Loop Result";
+
+                        while (i < j) {
+                            document.getElementById("loops").innerHTML += i + "<br>";
+                            i += counter;
+                        }
+                        break;
+                }
+            } else {
+                        document.getElementById("loops").innerHTML = "";
+                document.getElementById("result").innerHTML = "Re-enter values";
+            }
+
+
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>
+            DWARFS
+        </title>
+        <meta charset="utf-8">
+    
+    </head>
+    
+    <body>
+       <div id="prev">0</div>
+       <div id="number"></div>
+
+        <script>
+            var first = document.getElementById('number');
+            var prev = document.getElementById('prev');
+            var x = prev.innerHTML;
+        
+            for(i=0; i<100; i+x) {
+                prev.innerHTML = i;
+                first.innerHTML += i+x + "<br>";
+            }
+
+        </script>
+    </body>
+<body>

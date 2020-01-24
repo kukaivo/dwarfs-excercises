@@ -1,0 +1,197 @@
+<html>
+
+<head>
+    <title>Javascript Exercises</title>
+    <meta charset="utf-8" ; />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/myStyle.css">
+
+</head>
+
+<body>
+           
+          
+    <div class="container">
+
+        <nav>
+            <button style="color:#00adb5;" class="nav-item nav-link"  onclick="clickF()">Test Button</button>
+            <button style="color:#00adb5;" class="nav-item nav-link" onclick="getUserInput()">Test Input</button>
+            <button style="color:#00adb5;" class="nav-item nav-link" onclick="testEquality()">Test Equality</button>
+            <button style="color:#00adb5;" class="nav-item nav-link" onclick="getHours()"> Get Hours - Ternary</button>
+            <button style="color:#00adb5;" class="nav-item nav-link" onclick="capitalIfElse()"> Capitals - If Else</button>
+            <button style="color:#00adb5;" class="nav-item nav-link" onclick="capitalSwitch()"> Capitals - Switch</button>
+            <button style="color:#00adb5;" class="nav-item nav-link" onclick="printRandomNumber()"> Throw Dice</button>
+        </nav>
+
+
+    </div>
+
+    <div class="container">
+        <h1 id="title"> </h1>
+
+        <p id="demo"></p>
+
+        <img src="" id="die">
+
+    </div>
+
+    <script>
+
+        function clickF() {
+            alert("you have clicked a button");
+        }
+    </script>
+
+
+
+    <script>
+        function getUserInput() {
+            document.getElementById("title").innerHTML = "Input Test";
+            var fname = "Jason";
+            var lname = "Smith";
+            var age = 28;
+            var address;
+            document.getElementById("demo").innerHTML = "<br>First Name: <h2>" + fname + "</h2><br>" + "Last Name: " + lname + "<br>Age: " + age);
+        }
+    </script>
+
+
+    <script>
+        function testEquality() {
+            document.getElementById("title").innerHTML = "Equality Test";
+            a = 30;
+            b = 25;
+
+            if (a != b) {
+                console.log("x & Y values are not equal");
+            } else {
+                console.log("x & Y values are equal");
+            }
+
+            x = 30;
+            y = "30";
+
+            if (x !== y) {
+                console.log("x & Y values & type are not equal");
+            } else {
+                console.log("x & Y values & type are equal");
+            }
+        }
+    </script>
+
+    <script>
+        function getHours() {
+            document.getElementById("title").innerHTML = "Get Hours Test";
+            var time = new Date().getHours();
+            document.getElementById("demo").innerHTML = (time >= 6 && time <= 12) ? "Good Morning" : (time >= 13 && time <= 16) ? "Good Afternoon" : (time >= 17 && time <= 22) ? "Good Evening" : "Good Night";
+        }
+    </script>
+
+
+    <script>
+        //window.addEventListener("load", capital, false);
+
+        function capitalIfElse() {
+
+            document.getElementById("title").innerHTML = "Capitals If Else test";
+            var country = window.prompt("Please enter country: ");
+            var start = "The capital of " + country + " is: ";
+            country = country.toLowerCase();
+            var capitalName;
+
+            if (country === "united kingdom") {
+                capitalName = "London";
+            } else if (country === "france") {
+                capitalName = "Paris";
+
+            } else if (country === "italy") {
+                capitalName = "Rome";
+
+            } else if (country === "holland") {
+                capitalName = "Amsterdam";
+
+            } else if (country === "russia") {
+                capitalName = "Moscow";
+
+            }
+
+            if (capitalName == undefined) {
+                document.getElementById("demo").innerHTML = "Not known - try United Kingdom, France, Italy, Holland, Russia";
+            } else {
+
+                document.getElementById("demo").innerHTML = start + capitalName;
+            }
+        }
+    </script>
+
+    <script>
+        function capitalSwitch() {
+            document.getElementById("title").innerHTML = "Capital Switch Test";
+            var country = window.prompt("Please enter country: ").toLowerCase();
+
+            var capitalName;
+
+            switch (country) {
+                case "united kingdom":
+                    capitalName = "London";
+                    break;
+                case "france":
+                    capitalName = "Paris";
+                    break;
+
+                case "italy":
+                    capitalName = "Rome";
+                    break;
+
+                case "holland":
+                    capitalName = "Amsterdam";
+                    break;
+
+                case "russia":
+                    capitalName = "Moscow";
+                    break;
+
+                default:
+                    document.getElementById("demo").innerHTML = "Not known - try United Kingdom, France, Italy, Holland, Russia";
+            }
+
+            document.getElementById("demo").innerHTML = "The capital of " + country + " is: " + capitalName;
+
+        }
+    </script>
+
+    <script>
+        function printRandomNumber() {
+            document.getElementById("title").innerHTML = "Test - Random Dice";
+            var aNumber = Math.ceil(Math.random() * 6);
+            document.getElementById("demo").innerHTML = "Your number is " + aNumber;
+            
+//            die.src="images/die"+aNumber+".png";
+
+            switch (aNumber) {
+                case 1:
+                    die.src = 'images/die1.png';
+                    break;
+                case 2:
+                    die.src = 'images/die2.png';
+                    break;
+                case 3:
+                    die.src = 'images/die3.png';
+                    break;
+                case 4:
+                    die.src = 'images/die4.png';
+                    break;
+                case 5:
+                    die.src = 'images/die5.png';
+                    break;
+                case 6:
+                    die.src = 'images/die6.png';
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

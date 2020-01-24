@@ -1,0 +1,12 @@
+        body {
+            font-family: 'Arial', serif;
+            letter-spacing: 2px;
+            width: 80%;
+            margin: auto;
+            text-align: center;
+        }
+
+.myImage {
+    height: 100px;
+  width: 20%;
+}
